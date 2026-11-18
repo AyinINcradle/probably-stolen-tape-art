@@ -1,0 +1,10 @@
+# build outputs
+bin/
+obj/
+*.user
+.vs/
+.idea/
+
+# local publish staging
+release/
+*.zip

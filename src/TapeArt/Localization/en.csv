@@ -1,0 +1,15 @@
+# English strings. Keys allow letters, digits and underscores; everything after the first comma is text.
+item_sign_name,Tape Art Sign
+item_sign_flavor,"Put on some music and the customers come by themselves."
+item_core_name,Cassette Player Core
+item_core_desc,A chip that fits the cassette player core slot.
+item_core_flavor,"Let the whole street hear your taste."
+card_tape_art,Tape Art
+up1_title,Tape Art I
+up1_desc,Two pristine cassettes appear on the back counter right away. The tape hoarder visits tomorrow without fail and then at least once a week: he stocks five damaged or corrupted cassettes plus an art sign, and buys pristine cassettes from your counter only. You can also start repairing damaged cassettes in the cassette player's storage bay with common electronic parts.
+up2_title,Tape Art II
+up2_desc,The cassette player gains a core: cassettes in the playback bay make the store more appealing to customers, at a nightly credit cost that electronic parts can reduce.
+merchant_name,Tape Hoarder
+merchant_line,"Cassettes? I take them all - the pristine ones."
+calendar_tape_label,Tape
+calendar_tape_cost,Cassette player power: {0} credits per night

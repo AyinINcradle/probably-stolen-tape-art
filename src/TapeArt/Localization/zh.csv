@@ -1,0 +1,15 @@
+# 中文文案。键名只允许字母、数字和下划线；第一个逗号之后都是文本。
+item_sign_name,艺术品灯牌
+item_sign_flavor,「放点音乐，客人自己会来。」
+item_core_name,磁带播放机核心
+item_core_desc,装进磁带播放机核心槽的芯片。
+item_core_flavor,「整条街都该听见你的品味。」
+card_tape_art,磁带艺术
+up1_title,磁带艺术Ⅰ
+up1_desc,王尔德会为你引荐一位磁带迷商人，对方会每周到访一次，出售损坏的磁带和艺术品灯牌，并收购完好品质的磁带。立即获得两盘完好磁带，同时可以用电子元件（普通）修复磁带播放机里的损坏磁带。（解锁磁带艺术内容。）
+up2_title,磁带艺术Ⅱ
+up2_desc,磁带播放机会装上一枚核心，播放区里的磁带会让店铺更吸引顾客，每晚则要为此支付电费——费用可以用电子元件降低。
+merchant_name,磁带迷商人
+merchant_line,「磁带？我全收——完好的那种。」
+calendar_tape_label,磁带
+calendar_tape_cost,磁带播放机电费：每晚 {0} 信用点

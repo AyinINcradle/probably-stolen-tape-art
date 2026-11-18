@@ -252,7 +252,10 @@ namespace TapeArt
             }
         }
 
-        /// <summary>每早检查：补齐没装上的核心；解锁Ⅰ后间隔满七天再排一次商人。</summary>
+        /// <summary>
+        /// 每早检查：补齐没装上的核心；按原版「退休供应商」的节奏排商人
+        /// （解锁后的第二天必到，此后每周固定一天，可被「今日不营业」挡掉）。
+        /// </summary>
         public static void OnMorning(ModLog log)
         {
             if (PlayerStore.Instance == null)
@@ -269,14 +272,14 @@ namespace TapeArt
             }
 
             int day = CurrentDay();
-            int last = ModHelper.GetModDataInt(Ids.ModId, Ids.DataLastVisitDay, 0);
-            if (last <= 0)
+            // 与水培农场主同日：dayCounter % 7 == 2
+            if (day % 7 != 2)
             {
-                ModHelper.SetModDataInt(Ids.ModId, Ids.DataLastVisitDay, day);
                 return;
             }
-            if (day - last < 7)
+            if (OutOfStockSignHelper.IsTurnedAway(Ids.Merchant))
             {
+                log.Log("Tape-hoarder merchant skipped (turned away today)");
                 return;
             }
 

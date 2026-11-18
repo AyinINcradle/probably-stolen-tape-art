@@ -21,6 +21,7 @@ namespace TapeArt
                 ModHelper.AddDebugFunction(Ids.ModId, ModHelper.DEBUG_CATEGORY_COMMAND, "Queue Tape Merchant", QueueMerchant);
                 ModHelper.AddDebugFunction(Ids.ModId, ModHelper.DEBUG_CATEGORY_COMMAND, "Reinstall Core Now", ReinstallCore);
                 ModHelper.AddDebugFunction(Ids.ModId, ModHelper.DEBUG_CATEGORY_COMMAND, "Reset Tier I Reward", ResetTierOne);
+                ModHelper.AddDebugFunction(Ids.ModId, ModHelper.DEBUG_CATEGORY_COMMAND, "Export NPC Sprites", DebugSprites.Export);
             }
             catch (Exception e)
             {

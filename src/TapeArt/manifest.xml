@@ -3,17 +3,19 @@
   <ID>tape_art</ID>
   <Name>磁带艺术 | Tape Art</Name>
   <Author>苍苍幻影</Author>
-  <ModVersion>1.0.2</ModVersion>
+  <ModVersion>1.2.3</ModVersion>
   <Description>把店里那台吃灰的磁带播放机，变成整条街最有品味的声音。
 
-深空站的当铺里，磁带只是一件艺术品——好听，卖不上价。这个模组给它补上一条完整的产品线：灯牌把客人招来，商人把货补上，播放机把整条街的注意力吸过来。
+深空站的当铺里，磁带只是一件艺术品——好听，卖不上价。这个模组给它补上一条完整的产品线：灯牌把客人招来，商人和发烧友把货盘活，播放机把整条街的注意力吸过来。
 
-【艺术品灯牌】淡紫色磁带霓虹灯牌，占 2×2 格。放进展示柜，当天就有机会把磁带迷商人招上门；开局选【磁带迷】也能直接拿到一块。
+【艺术品灯牌】淡紫色磁带霓虹灯牌，占 2×2 格。放在展示柜里（含悬挂广告牌），当天就有机会招来磁带发烧友；开局选【磁带迷】也能直接拿到一块。
 
-【磁带迷商人】固定上架五盘磁带，只卖损坏与严重损坏两种品质，外加一块艺术品灯牌（已拥有则不再卖）。他只按店里的正常收购价收完好品质的磁带——把磁带摆到柜台上，像对待其他客人一样谈价即可。
+【磁带迷商人】按原版「退休供应商」的节奏到访：解锁Ⅰ后第二天必到，此后每周固定一天。上架五盘损坏或严重损坏的磁带、一块艺术品灯牌（已拥有则不再卖）与 1–3 个电子元件（普通）；只按店里的正常价格收购完好品质的磁带。
+
+【磁带发烧友】灯牌招来的下层区买家，每次都是不同的居民。像卖东西一样把磁带摆上柜台卖给他即可——成交价按品质计价：严重损坏 5、损坏 10、完好 20 信用点，花完他当天的预算为止（前期约 100，受店铺吸引力与声望 perks 影响）。他不收自己正在卖的曲目。磁带会在两天后原样回到前柜台，相当于「出租」；中途退出游戏再读档，到期仍会归还。
 
 【王尔德人脉 · 磁带艺术】（基础页，供货商之后）
-Ⅰ（225）：立刻得到两盘完好磁带，放在后柜台；商人第二天必定登门，此后每周至少一次；同时解锁「用电子元件（普通）修复储藏区损坏磁带」。
+Ⅰ（225）：立刻得到两盘完好磁带，放在后柜台；商人第二天必定登门，此后每周一次；同时解锁「用电子元件（普通）修复储藏区损坏磁带」。
 Ⅱ（540）：播放机多出核心插槽，核心自动装入、无法取下。
 
 【磁带播放机核心】播放区里每盘完好品质磁带 +20 点店铺吸引力，最多 9 盘，即 180 点；只看播放区，储藏区不算。每晚自动扣除 40 信用点，可用电子元件（普通）升级五次，每次减少 4 点，最低 20 点/晚。现金不够付当晚电费，加成会暂时归零；未解锁Ⅱ之前，播放机与原版完全一致。
@@ -24,7 +26,25 @@
 
 只新增内容，不修改原版数值、不动其他系统、不改存档结构。适用游戏 1.0.0.x。
 
-English: adds a lavender cassette neon sign for the display case, a tape hoarder merchant who stocks damaged cassettes and buys pristine ones, and two Wild's network upgrades — I (225) cassettes plus weekly merchant visits and cassette repair, II (540) a cassette player core that turns playback-bay cassettes into store appeal at a nightly credit cost. Vanilla values and systems are unchanged; game 1.0.0.x.</Description>
+English
+Turn that dusty cassette player in your shop into the best-dressed sound on the whole street. Adds an art neon sign, a tape enthusiast buyer, a tape hoarder merchant, and the two-level Wild's Network "Cassette Art" upgrade.
+
+[Art Neon Sign] A lavender cassette neon sign occupying 2x2 tiles. Place it in the display case (or on hanging billboards) to attract the tape enthusiast; choosing [Tape Enthusiast] at the start also grants one.
+
+[Tape Enthusiast] A lower-city buyer, a different resident every visit. Sell cassettes to him like any other customer: he pays by quality (5/10/20 credits for corrupted/damaged/pristine) out of a daily budget, refuses tracks he is reselling, and every cassette returns to the front counter two days later - a lending service in all but name.
+
+[Tape Hoarder Merchant] Follows the vanilla retired-supplier schedule after tier I; stocks five damaged cassettes, an art sign and 1-3 electronic parts, and buys pristine cassettes only.
+
+[Wild's Network - Cassette Art]
+I (225): Gain two pristine cassettes; the merchant visits the next day and at least once a week thereafter; also unlocks repairing damaged cassettes in the storage area using electronic components.
+II (540): Installs a core in the cassette player; pristine cassettes in the playback area increase store appeal, consuming credits each night, which can be reduced with electronic components.
+
+Adds content only; does not modify vanilla values or other systems. Compatible with 1.0.0.x.
+
+【问题反馈】遇到 BUG 请到 GitHub Issues 提报：https://github.com/AyinINcradle/probably-stolen-tape-art/issues
+提报时请附上：模组版本、游戏版本、问题描述，以及日志文件 %USERPROFILE%\AppData\LocalLow\Questing Goose Studio\Probably Stolen\Player.log
+
+[Bug reports] Please open an issue at https://github.com/AyinINcradle/probably-stolen-tape-art/issues and include your mod version, game version, and the Player.log from %USERPROFILE%\AppData\LocalLow\Questing Goose Studio\Probably Stolen\Player.log</Description>
   <GameVersions>
     <Version>1.0.0</Version>
   </GameVersions>

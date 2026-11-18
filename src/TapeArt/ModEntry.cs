@@ -34,8 +34,9 @@ namespace TapeArt
             // 注意：人脉升级不能在这里注册。NetworkUpgrade.RegisterModUpgrade 会访问
             // PlayerStore.Instance，而该属性在菜单阶段会懒加载 new PlayerStore() 并空引用。
             Merchant.Register();
+            Enthusiast.Register();
 
-            log.Log("enabled: items and merchant registered");
+            log.Log("enabled: items, merchant and enthusiast registered");
         }
 
         public void OnDisable()
@@ -116,6 +117,7 @@ namespace TapeArt
         {
             try
             {
+                Rental.ReturnDue();
                 Network.OnMorning(log);
             }
             catch (Exception e)
@@ -142,6 +144,7 @@ namespace TapeArt
             try
             {
                 Network.OnRunLoaded();
+                Rental.ReturnDue();
             }
             catch (Exception e)
             {
@@ -198,7 +201,7 @@ namespace TapeArt
                 }
                 else if (item.identifier == Ids.Sign)
                 {
-                    builder.AddLine("放进展示柜：当天有几率吸引磁带迷商人上门。", true,
+                    builder.AddLine("放进展示柜或悬挂广告牌：当天有几率招来磁带发烧友。", true,
                         RenderHandler.ColorPalette.LightCyan);
                 }
             }

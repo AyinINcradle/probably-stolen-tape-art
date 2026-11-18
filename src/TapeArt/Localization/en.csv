@@ -1,4 +1,4 @@
-# English strings. Keys allow letters, digits and underscores; everything after the first comma is text.
+﻿# English strings. Keys allow letters, digits and underscores; everything after the first comma is text.
 item_sign_name,Tape Art Sign
 item_sign_flavor,"Put on some music and the customers come by themselves."
 item_core_name,Cassette Player Core
@@ -13,3 +13,14 @@ merchant_name,Tape Hoarder
 merchant_line,"Cassettes? I take them all - the pristine ones."
 calendar_tape_label,Tape
 calendar_tape_cost,Cassette player power: {0} credits per night
+enthusiast_name,Tape Enthusiast
+enthusiast_line,"Old tapes... got anything else? Lend me a couple for two days and I'll bring them back in one piece."
+rent_inspect_label,Show him the tapes on the counter
+rent_inspect_desc,He pays by quality for whatever he feels like borrowing.
+rent_reply_nothing,"...your counter is empty."
+rent_reply_reject,"I have these already, or they are unplayable. Bring me something else."
+rent_reply_done_0,"Fine, I will take these - {0} credits, back in two days exactly as they are."
+rent_reply_done_1,"{0} credits. Done. Two days, and do not rush me."
+rent_reply_done_2,"That will keep me busy. {0} credits, counted."
+enthusiast_bye_label,End the conversation
+enthusiast_bye_desc,He leaves and comes back another day.

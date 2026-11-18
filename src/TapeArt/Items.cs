@@ -9,6 +9,7 @@ namespace TapeArt
         public const string Sign = "tape_art_sign";
         public const string Core = "tape_art_core";
         public const string Merchant = "tape_art_merchant";
+        public const string Enthusiast = "tape_art_enthusiast";
 
         public const string Upgrade1 = "TAPE_ART_I";
         public const string Upgrade2 = "TAPE_ART_II";
@@ -21,6 +22,18 @@ namespace TapeArt
         public const string TapeheadPerk = "tapehead";
 
         public const string DataLastVisitDay = "last_merchant_day";
+        public const string DataRental = "rental_tapes";
+
+        /// <summary>电子元件（普通），用于修复磁带。</summary>
+        public const string ElectronicPart = "common_electronic";
+
+        /// <summary>出租价格：严重损坏 / 损坏 / 完好。</summary>
+        public const int RentCorrupted = 5;
+        public const int RentDamaged = 10;
+        public const int RentPristine = 20;
+
+        public const int EnthusiastBudgetMin = 80;
+        public const int EnthusiastBudgetMax = 120;
 
         public static readonly string[] PristineCassettes =
         {
@@ -56,7 +69,7 @@ namespace TapeArt
         {
             GameItem item = ItemDirectory.CreateEmptyItem(Ids.Sign);
             item.name = Loc.Get("item_sign_name", "艺术品灯牌");
-            item.shortDescription = "放进展示柜，招来想出手" + TypeHelper.GetTypeDisplayName("ART") + "的客人。";
+            item.shortDescription = "放进展示柜或悬挂广告牌，招来想租借磁带的发烧友。";
             item.flavorText = Loc.Get("item_sign_flavor", "「放点音乐，客人自己会来。」");
             item.unitValue = 300L;
             item.EnableTag("IMPORTANT_TAG");

@@ -1,6 +1,6 @@
 # 磁带艺术：可能是磁带增强 · Tape Art
 
-《深空当铺：可能是偷的》(Probably Stolen) 的模组。English: [README.en.md](README.en.md)把店里那台吃灰的磁带播放机，变成整条街最有品味的声音。
+《深空当铺：可能是偷的》(Probably Stolen) 的模组。把店里那台吃灰的磁带播放机，变成整条街最有品味的声音。
 
 - 创意工坊：<https://steamcommunity.com/sharedfiles/filedetails/?id=3841830230>
 - 适用游戏版本：**1.0.0.x**（清单声明 `1.0.0`）

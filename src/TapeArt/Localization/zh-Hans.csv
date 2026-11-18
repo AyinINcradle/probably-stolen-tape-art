@@ -1,4 +1,4 @@
-# 中文文案。键名只允许字母、数字和下划线；第一个逗号之后都是文本。
+﻿# 中文文案。键名只允许字母、数字和下划线；第一个逗号之后都是文本。
 item_sign_name,艺术品灯牌
 item_sign_flavor,「放点音乐，客人自己会来。」
 item_core_name,磁带播放机核心
@@ -13,3 +13,14 @@ merchant_name,磁带迷商人
 merchant_line,「磁带？我全收——完好的那种。」
 calendar_tape_label,磁带
 calendar_tape_cost,磁带播放机电费：每晚 {0} 信用点
+enthusiast_name,磁带发烧友
+enthusiast_line,「这些老带子……你手里还有别的吗？借我两天，保证完好还你。」
+rent_inspect_label,给他看看柜台上的磁带
+rent_inspect_desc,他会按品质出价，挑他感兴趣的租走。
+rent_reply_nothing,「……你柜台上什么都没有啊。」
+rent_reply_reject,「这些我都有了，要么就是听不了。换点别的来。」
+rent_reply_done_0,「行，这些我都要了——{0} 信用点，两天后原样送回来。」
+rent_reply_done_1,「{0} 信用点，成交。别催我，两天。」
+rent_reply_done_2,「够我听一阵子了。{0} 信用点，数好了。」
+enthusiast_bye_label,结束对话
+enthusiast_bye_desc,他会离开，明天或之后再来。

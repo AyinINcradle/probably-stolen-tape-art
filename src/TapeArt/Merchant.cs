@@ -18,12 +18,14 @@ namespace TapeArt
             client.identifier = Ids.Merchant;
             client.nonShootable = true;
             client.displayName = Loc.Get("merchant_name", "磁带迷商人");
-            client.spriteName = SpriteDict.GetRetiredAquafarmerSpriteName();
+            client.spriteName = SpriteName();
             client.clientFaction = "FACTION_LOWER_LEVEL";
             StoreClientFactionSetup.InitLowerLevelCitizen(client);
 
             // 原版「既卖又买」的写法；收购按柜台议价，只看玩家摆上柜台的货。
             client.clientIntent = StoreClient.ClientIntent.SELLNBUY;
+            // 界面显示原版的「艺术品」兴趣标签，实际只收完好的那几盘
+            client.clientBuyingTagList.Add("ART");
 
             // 只收完好品质磁带：cassette1..14 的精确 id。
             // 用标签 CASSETTE_TAG 会把损坏(l)和严重损坏(d)也算进去。
@@ -38,6 +40,42 @@ namespace TapeArt
             client.AddBasicDialog();
             client.CompleteClientCreation();
             return client;
+        }
+
+        /// <summary>商人当前使用的立绘；发烧友也用它，保持「同行供货商」的形象。</summary>
+        public static string SpriteName()
+        {
+            return PickCollectorSprite();
+        }
+
+        /// <summary>
+        /// 商人的固定形象：从拾荒者立绘池里挑一次就存进模组数据，之后每次到访都是同一个人
+        /// （翻旧货的气质，比退休水培农场主更像个磁带收藏家）。
+        /// </summary>
+        private static string PickCollectorSprite()
+        {
+            string cached = null;
+            try
+            {
+                cached = ModHelper.GetModData(Ids.ModId, "merchant_sprite", "");
+            }
+            catch (Exception)
+            {
+            }
+            if (!string.IsNullOrEmpty(cached))
+            {
+                return cached;
+            }
+
+            string picked = SpriteDict.GetRandomScavSpriteName();
+            try
+            {
+                ModHelper.SetModData(Ids.ModId, "merchant_sprite", picked);
+            }
+            catch (Exception)
+            {
+            }
+            return picked;
         }
 
         /// <summary>上架：五盘随机品质磁带，外加一块艺术品灯牌（已拥有则不再卖）。</summary>
@@ -66,6 +104,13 @@ namespace TapeArt
             if (sellsSign)
             {
                 PlayerStore.Instance.AddDirectSellingItemToTable(Ids.Sign);
+            }
+
+            // 顺带补一点电子元件（普通），玩家修磁带要用。
+            int parts = UnityEngine.Random.Range(1, 4);
+            for (int i = 0; i < parts; i++)
+            {
+                PlayerStore.Instance.AddDirectSellingItemToTable(Ids.ElectronicPart);
             }
         }
     }

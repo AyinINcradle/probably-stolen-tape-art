@@ -80,43 +80,77 @@ namespace TapeArt
         }
     }
 
-    /// <summary>艺术品灯牌放进展示柜后，往当天的刷客预测里加入磁带迷商人。</summary>
+    /// <summary>
+    /// 艺术品灯牌（展示柜或悬挂广告牌）会招来磁带发烧友。
+    /// 用 ShowcaseHelper.IsShowcaseContainItemById 判断：该接口会被 Proper Signboards 之类的
+    /// 模组改写成「展示柜 + 悬挂广告牌」的合并视图，直接调用即可自动兼容。
+    /// </summary>
     [HarmonyPatch(typeof(ShowcaseHelper), nameof(ShowcaseHelper.GetDisplayCasePrediction))]
     internal static class PatchSignPrediction
     {
-        private const int Chance = 50;
+        internal const int Chance = 50;
 
         private static void Postfix(ref List<(string, int, string)> __result)
         {
             try
             {
-                if (__result == null || EmporiumEntry.Instance == null || EmporiumEntry.Instance.showcaseElement == null)
+                if (__result == null || EmporiumEntry.Instance == null)
                 {
                     return;
                 }
-                if (__result.Any(entry => entry.Item1 == Ids.Merchant))
+                if (__result.Any(entry => entry.Item1 == Ids.Enthusiast))
                 {
                     return;
                 }
-
-                bool hasSign = false;
-                foreach (GameItem child in EmporiumEntry.Instance.showcaseElement.childItems)
+                if (SignDisplayed())
                 {
-                    if (child != null && child.identifier == Ids.Sign && GeneralHelper.IsItemOwned(child))
-                    {
-                        hasSign = true;
-                        break;
-                    }
-                }
-                if (hasSign)
-                {
-                    __result.Add((Ids.Merchant, Chance, Ids.Sign));
+                    __result.Add((Ids.Enthusiast, Chance, Ids.Sign));
                 }
             }
             catch (Exception e)
             {
                 Debug.LogError("[TapeArt] sign prediction patch failed: " + e);
             }
+        }
+
+        /// <summary>灯牌是否摆在可招客的位置（兼容悬挂广告牌模组）。</summary>
+        internal static bool SignDisplayed()
+        {
+            try
+            {
+                if (ShowcaseHelper.IsShowcaseContainItemById(Ids.Sign))
+                {
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+            }
+
+            // 兜底：悬挂广告牌类模组可能把灯牌从展示柜移走，原版接口就读不到。
+            // 只要玩家拥有灯牌、且它不在背包里，就认为已经摆在店里的某个展示位置。
+            return OwnedSignPlaced();
+        }
+
+        private static bool OwnedSignPlaced()
+        {
+            if (EmporiumEntry.Instance == null)
+            {
+                return false;
+            }
+            foreach (GameItem item in EmporiumEntry.Instance.GetAllOwnedItems())
+            {
+                if (item == null || item.identifier != Ids.Sign)
+                {
+                    continue;
+                }
+                GameInventory parent = item.parentInventory;
+                if (parent != null && parent != EmporiumEntry.Instance.invElement)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

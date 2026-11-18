@@ -282,9 +282,37 @@ namespace TapeArt
                 log.Log("Tape-hoarder merchant skipped (turned away today)");
                 return;
             }
+            if (AlreadyQueuedToday(day))
+            {
+                log.Log("Tape-hoarder merchant already queued for day " + day);
+                return;
+            }
 
             QueueMerchant(0);
             log.Log("Tape-hoarder merchant queued for day " + day);
+        }
+
+        /// <summary>
+        /// 原版排客队列不去重，解锁时的「次日必到」和每周固定日可能撞在同一天，
+        /// 所以排队前先看两处：队列里是否已有他，以及模组数据里记录的排客日是否就是今天。
+        /// </summary>
+        private static bool AlreadyQueuedToday(int day)
+        {
+            try
+            {
+                PlayerStore store = PlayerStore.Instance;
+                if (store != null && store.futurStoreClientIdQueue != null
+                    && store.futurStoreClientIdQueue.Contains(Ids.Merchant))
+                {
+                    return true;
+                }
+                int last = ModHelper.GetModDataInt(Ids.ModId, Ids.DataLastVisitDay, -1);
+                return last == day;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

@@ -26,6 +26,8 @@ namespace TapeArt
             client.clientIntent = StoreClient.ClientIntent.SELLNBUY;
             // 界面显示原版的「艺术品」兴趣标签，实际只收完好的那几盘
             client.clientBuyingTagList.Add("ART");
+            // 与退休供货商同款词条：他卖的东西带供货商加价
+            client.clientItemFeatureBuying.Add("premiumBuy15");
 
             // 只收完好品质磁带：cassette1..14 的精确 id。
             // 用标签 CASSETTE_TAG 会把损坏(l)和严重损坏(d)也算进去。

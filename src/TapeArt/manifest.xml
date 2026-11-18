@@ -3,7 +3,7 @@
   <ID>tape_art</ID>
   <Name>磁带艺术 | Tape Art</Name>
   <Author>苍苍幻影</Author>
-  <ModVersion>1.0.1</ModVersion>
+  <ModVersion>1.0.2</ModVersion>
   <Description>把店里那台吃灰的磁带播放机，变成整条街最有品味的声音。
 
 深空站的当铺里，磁带只是一件艺术品——好听，卖不上价。这个模组给它补上一条完整的产品线：灯牌把客人招来，商人把货补上，播放机把整条街的注意力吸过来。
@@ -22,7 +22,9 @@
 
 日历 → 夜间报告的吸引力条里，磁带贡献的那一段用淡紫色单独显示，与投影仪那一段区分开。
 
-只新增内容，不修改原版数值、不动其他系统、不改存档结构。适用游戏 1.0.0.x。</Description>
+只新增内容，不修改原版数值、不动其他系统、不改存档结构。适用游戏 1.0.0.x。
+
+English: adds a lavender cassette neon sign for the display case, a tape hoarder merchant who stocks damaged cassettes and buys pristine ones, and two Wild's network upgrades — I (225) cassettes plus weekly merchant visits and cassette repair, II (540) a cassette player core that turns playback-bay cassettes into store appeal at a nightly credit cost. Vanilla values and systems are unchanged; game 1.0.0.x.</Description>
   <GameVersions>
     <Version>1.0.0</Version>
   </GameVersions>
